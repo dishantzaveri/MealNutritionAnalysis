@@ -83,6 +83,32 @@ The model integrates diverse modalities into a unified neural network. The major
   - **Rolling Variance**: Highlighted the importance of glucose dynamics in metabolic responses.
   - **Image Embeddings**: Captured crucial visual information about meal composition.
 
+### Complete Workflow
+
+The following outlines the entire approach implemented in this project:
+
+1. **Data Preparation**:
+   - Loaded datasets from CSV files and performed modality-specific preprocessing.
+   - Ensured all features were aligned by participant ID and date.
+
+2. **Feature Engineering**:
+   - Designed temporal and statistical features for CGM data.
+   - Extracted meaningful embeddings from meal images.
+   - Applied scaling and one-hot encoding for demographics and gut health data.
+
+3. **Model Development**:
+   - Implemented EfficientNetB0 for image feature extraction.
+   - Built a custom neural network to merge features from all modalities.
+   - Trained the model using RMSRE as the loss function.
+
+4. **Evaluation and Results Analysis**:
+   - Evaluated model performance using validation RMSRE.
+   - Fine-tuned hyperparameters and retrained for optimal performance.
+
+### Video Explanation
+
+For a detailed walkthrough of the project, refer to the video demonstration: [Project Video](https://drive.google.com/file/d/1BuZkIPveY7Qb6t8KGPqV1t7jcfITvBZE/view?usp=sharing)
+
 ## Challenges
 
 1. **Heterogeneous Data**:
@@ -97,20 +123,6 @@ The model integrates diverse modalities into a unified neural network. The major
 4. **Small Dataset**:
    - Mitigated overfitting through regularization and data augmentation techniques.
 
-## Future Scope
-
-1. **Advanced Architectures**:
-   - Explore architectures such as ResNet and fine-tuning for improved feature extraction.
-
-2. **Attention Mechanisms**:
-   - Implement attention layers to dynamically prioritize critical features from different modalities.
-
-3. **Dataset Expansion**:
-   - Incorporate additional participants and longer study durations to improve model generalization.
-
-4. **Real-Time Applications**:
-   - Integrate with wearable devices for real-time calorie monitoring and dietary recommendations.
-
 ## Contributions
 
 | Team Member       | Contributions                                      |
@@ -118,34 +130,6 @@ The model integrates diverse modalities into a unified neural network. The major
 | Priyal Khapra     | Data preprocessing and integration.               |
 | Dishant Zaveri    | Model training and optimization.                  |
 | Kanishk Chhabra   | Results analysis, visualization, and documentation. |
-
-## How to Run the Project
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/username/meal-nutrition-analysis.git
-   cd meal-nutrition-analysis
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Preprocess data:
-   ```bash
-   python src/preprocess.py
-   ```
-
-4. Train the model:
-   ```bash
-   python src/train.py
-   ```
-
-5. Evaluate results:
-   ```bash
-   python src/evaluate.py
-   ```
 
 ## Acknowledgments
 
